@@ -29,7 +29,8 @@ const BuildControls = (props) => {
 			))}
 			<button
 				className={Classes.OrderButton}
-				disabled={!props.purchasable}>
+				disabled={!props.purchasable}
+				onClick={props.ordered}>
 				Order Now
 			</button>
 		</div>
@@ -42,6 +43,7 @@ BuildControls.propTypes = {
 	disabled: PropTypes.object.isRequired,
 	totalPrice: PropTypes.number.isRequired,
 	purchasable: PropTypes.bool.isRequired,
+	ordered: PropTypes.func.isRequired,
 };
 
 export default BuildControls;
