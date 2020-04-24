@@ -13,6 +13,9 @@ const BuildControls = (props) => {
 
 	return (
 		<div className={Classes.BuildControls}>
+			<p>
+				<strong>Total Rice: {props.totalPrice.toFixed(2)}</strong>
+			</p>
 			{controls.map((ctrls) => (
 				<BuildControl
 					added={() => props.ingedientAdded(ctrls.type)}
@@ -21,8 +24,14 @@ const BuildControls = (props) => {
 					label={ctrls.label}
 					type={ctrls.type}
 					disabled={props.disabled[ctrls.type]}
+					totalPrice={props.totalPrice}
 				/>
 			))}
+			<button
+				className={Classes.OrderButton}
+				disabled={!props.purchasable}>
+				Order Now
+			</button>
 		</div>
 	);
 };
@@ -31,6 +40,8 @@ BuildControls.propTypes = {
 	ingedientAdded: PropTypes.func.isRequired,
 	ingedientRemoved: PropTypes.func.isRequired,
 	disabled: PropTypes.object.isRequired,
+	totalPrice: PropTypes.number.isRequired,
+	purchasable: PropTypes.bool.isRequired,
 };
 
 export default BuildControls;

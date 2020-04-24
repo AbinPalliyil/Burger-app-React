@@ -24,6 +24,7 @@ BuildControl.propTypes = {
 	added: PropTypes.func.isRequired,
 	removed: PropTypes.func.isRequired,
 	disabled: PropTypes.bool.isRequired,
+	totalPrice: PropTypes.number.isRequired,
 };
 
 export default BuildControl;

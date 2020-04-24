@@ -22,14 +22,12 @@ const Burger = (props) => {
 			<BurgerIngrediant type='bread-top' />
 			{transformedIngredients}
 			<BurgerIngrediant type='bread-bottom' />
-			<p>Total Rice: {props.price}</p>
 		</div>
 	);
 };
 
 Burger.propTypes = {
 	Ingredients: PropTypes.object,
-	price: PropTypes.number.isRequired,
 };
 
 export default Burger;
