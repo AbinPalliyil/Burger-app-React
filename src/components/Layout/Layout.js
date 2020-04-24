@@ -4,11 +4,12 @@ import Aux from '../../hoc/Auxilary';
 
 import Classes from '../Layout/Layout.module.css';
 import PropTypes from 'prop-types';
+import Toolbar from '../Navigation/Toolbar/Toolbar';
 
 const Layout = (props) => (
 	<Aux>
-		<div className={Classes.Content}>Menubar</div>
-		<main>{props.children}</main>
+		<Toolbar />
+		<main className={Classes.Content}>{props.children}</main>
 	</Aux>
 );
 
